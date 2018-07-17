@@ -43,11 +43,24 @@ It is possible to check a summary of partitions and nodes with **sinfo -s**
     serial           up 3-00:00:00          0/6/0/6  compute[068-073]
     dcv              up 14-00:00:0          1/0/0/1  bc4vis1
 
-# Space
+# Disk Space
 
-Every home has 20 Gibabytes of space. However, there is a larger space per user
+## Home space
+
+Every home has 20 Gibabytes of space.
+
+## Sratch Space
+
+However, there is a larger space per user
 of 512 Gigabytes called **scratch**. You should store there big datasets or
 results of your experiments. You can create a symbolic link for an easier
 access into your home folder
 
     ln -s /mnt/storage/scratch/$USER scratch
+
+## Purchased Project Space
+
+Some groups have additional purchased space in
+
+    /mnt/storage/private
+
