@@ -70,7 +70,16 @@ can unload Anaconda3 and check that we get back the default Python.
     $ python --version
     Python 2.7.5
 
+
 ## Your own modules
+
+You can also include your own modules.
+
+    git@github.com:tj/watch.git
+    cd watch
+    git checkout tags/0.3.1
+    mkdir -p ~/Modules/modules/watch/0.3.1/bin
+    PREFIX=~/Modules/modules/watch/0.3.1 make install
 
 For example, this is my own module watch
 
@@ -95,22 +104,115 @@ And the content of the **0.3.1.lua** file is (TODO: need to update description)
 
     Description
     ===========
-    Git is a free and open source distributed version control system designed
-    to handle everything from small to very large projects with speed and
-    efficiency.
-
+    A tiny C program used to periodically execute a command.
 
     More information
     ================
-    - Homepage: http://git-scm.com/ ]])
+    - https://github.com/tj/watch/tree/0.3.1 ]])
 
-    whatis([[
-    Description: Git is a free and open source distributed version control system
-    designed
-    to handle everything from small to very large projects with speed and
-    efficiency. ]])
+    whatis([[A tiny C program used to periodically execute a command.]])
     whatis([[Homepage: http://git-scm.com/ ]])
 
     local root = "/mnt/storage/home/mp15688/Modules/modules/watch/0.3.1"
 
     prepend_path("PATH", pathJoin(root, "bin"))
+
+We can also install an older version
+
+    cd watch
+    git checkout tags/0.1.0
+    mkdir -p ~/Modules/modules/watch/0.1.0/bin
+    PREFIX=~/Modules/modules/watch/0.1.0 make install
+
+And we need to create the lua file ~/Modules/modulefiles/watch/0.1.0.lua
+
+    help([[
+
+    Description
+    ===========
+    A tiny C program used to periodically execute a command.
+
+    More information
+    ================
+    - https://github.com/tj/watch/tree/0.1.0 ]])
+
+    whatis([[A tiny C program used to periodically execute a command.]])
+    whatis([[Homepage: http://git-scm.com/ ]])
+
+    local root = "/mnt/storage/home/mp15688/Modules/modules/watch/0.1.0"
+
+    prepend_path("PATH", pathJoin(root, "bin"))
+
+The final tree of directories and files should look like this:
+
+    Modules/
+    |-- modulefiles
+    |   `-- watch
+    |       |-- 0.1.0.lua
+    |       `-- 0.3.1.lua
+    `-- modules
+        `-- watch
+            |-- 0.1.0
+            |   `-- bin
+            |       `-- watch
+            `-- 0.3.1
+                `-- bin
+                    `-- watch
+
+    8 directories, 4 files
+
+
+Now we can load and unload the different modules
+
+    $ module load watch/0.1.0
+    $ watch --version
+    0.1.0
+    $ module load watch/0.3.1
+
+    The following have been reloaded with a version change:
+      1) watch/0.1.0 => watch/0.3.1
+
+    $ watch --version
+    0.3.1
+
+# TODO: Another example install Python
+
+Another example with Python
+
+    wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
+
+Check that the md5sum is the same
+
+    $ md5sum Python-3.7.0.tar.xz
+    eb8c2a6b1447d50813c02714af4681f3  Python-3.7.0.tar.xz
+
+Then uncompress the file
+
+    tar xf Python-3.7.0.tar.xz
+
+Create a folder for the installation
+
+    mkdir -p ~/Modules/modules/Python/3.7.0/
+
+Then install as follows:
+
+    ./configure --prefix=$HOME/Modules/modules/Python/3.7.0
+    make
+    make install
+
+## Possible problems
+
+Problem 1
+
+    Could not build the ssl module!
+    Python requires an OpenSSL 1.0.2 or 1.1 compatible libssl with
+    X509_VERIFY_PARAM_set1_host().
+    LibreSSL 2.6.4 and earlier do not provide the necessary APIs,
+    https://github.com/libressl-portable/portable/issues/381
+
+Another problem
+
+    from _ctypes import Union, Structure, Array
+    ModuleNotFoundError: No module named '_ctypes'
+    make: *** [install] Error 1
+
