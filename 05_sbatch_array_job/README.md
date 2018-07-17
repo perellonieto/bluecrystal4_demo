@@ -198,3 +198,11 @@ all the files
     option_1 = def, option_2 = 222
     Running parallel jobs
     option_1 = ghi, option_2 = 222
+
+## Larger set of arguments
+
+If more than 2 arrays of parameters have to be computed, it would be better to
+generate a file with all the combination of parameters, and then load these
+parameters by reading the file.
+
+TODO: add an example
