@@ -4,12 +4,12 @@ We will load Anaconda 3 as it comes with Python3.6 and we can then create a
 virtual environment and load it.
 
     $ module load languages/anaconda3
-    [mp15688@bc4login1 06_python_scoop_parallel]$ python -m venv venv
-    [mp15688@bc4login1 06_python_scoop_parallel]$ source venv/bin/activate
+    $ python -m venv venv
+    $ source venv/bin/activate
 
 Then we can install the Python library scoop
 
-    (venv) [mp15688@bc4login1 06_python_scoop_parallel]$ pip install scoop
+    $ pip install scoop
     Collecting scoop
     Collecting pyzmq>=13.1.0 (from scoop)
       Using cached
