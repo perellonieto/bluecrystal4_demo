@@ -31,10 +31,8 @@ It is possible to check a summary of partitions and nodes with **sinfo -s**
 
     $ sinfo -s
     PARTITION     AVAIL  TIMELIMIT   NODES(A/I/O/T)  NODELIST
-    veryshort        up    6:00:00    393/34/27/454
-    compute[076-525],highmem[10-13]
-    test             up    1:00:00    393/34/27/454
-    compute[076-525],highmem[10-13]
+    veryshort        up    6:00:00    393/34/27/454  compute[076-525],highmem[10-13]
+    test             up    1:00:00    393/34/27/454  compute[076-525],highmem[10-13]
     cpu_test         up    1:00:00          1/1/0/2  compute[074-075]
     cpu*             up 14-00:00:0    389/34/27/450  compute[076-525]
     hmem             up 14-00:00:0          7/1/0/8  highmem[10-17]
