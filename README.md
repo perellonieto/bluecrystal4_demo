@@ -2,6 +2,18 @@
 
 This is a set of demos to illustrate different uses of Blue Crystal phase 4.
 
+# Table of contents
+
+- 00 Introduction (Bottom part of this README file)
+- [01 Running interactive jobs](01_interactive_jobs)
+- [02 What are environment modules](02_environment_modules)
+- [03 Submiting your first job](03_simple_script)
+- [04 Environment modules in a job](04_sbatch_environment)
+- [05 Submiting parallel jobs](05_sbatch_array_job)
+- [06 Python parallel jobs with Scoop](06_python_scoop_parallel)
+
+# Additional information
+
 You can find the following links of interest and they are a pre-requisite for
 the demos. However, a small summary is added here.
 
@@ -12,7 +24,9 @@ the demos. However, a small summary is added here.
 - [Other useful courses by Chrys Wood](http://chryswoods.com/main/courses.html)
 - [BlueCrystal Phase 3 User Documentation](https://www.acrc.bris.ac.uk/acrc/pdf/bc-user-guide.pdf)
 
-# Logging On
+# Introduction
+
+## Logging On
 
 Blue Crystal is composed by a set of nodes divided in different partitions.
 One of the partitions is the logging nodes that are used only to get a shell in
@@ -41,13 +55,13 @@ It is possible to check a summary of partitions and nodes with **sinfo -s**
     serial           up 3-00:00:00          0/6/0/6  compute[068-073]
     dcv              up 14-00:00:0          1/0/0/1  bc4vis1
 
-# Disk Space
+## Disk Space
 
-## Home space
+### Home space
 
 Every home has 20 Gibabytes of space.
 
-## Sratch Space
+### Sratch Space
 
 However, there is a larger space per user
 of 512 Gigabytes called **scratch**. You should store there big datasets or
@@ -56,7 +70,7 @@ access into your home folder
 
     ln -s /mnt/storage/scratch/$USER scratch
 
-## Purchased Project Space
+### Purchased Project Space
 
 Some groups have additional purchased space in
 
