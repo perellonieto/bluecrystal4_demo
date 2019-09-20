@@ -81,3 +81,13 @@ And after the 10 seconds we will get the corresponding output file:
     compute097.bc4.acrc.priv
     compute110.bc4.acrc.priv
     compute110.bc4.acrc.priv
+
+It is also possible to use a full node in order to avoid sharing memory and cpu's with other users, this can be done with the flag __exclusive__ as in the following example
+
+    #!/bin/bash
+
+    #SBATCH --job-name=test_job
+    #SBATCH --partition=test
+    #SBATCH --nodes=1
+    #SBATCH --time=0-0:0:15
+    #SBATCH --exclusive
