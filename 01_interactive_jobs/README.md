@@ -29,3 +29,10 @@ is sharing the node (and memory) with the flag **--exclusive**
 Also, it is possible to ask for one gpu
 
     srun -p gpu --gres=gpu:1 -t 0-00:30:00 --mem=4G --pty bash
+
+It may be useful to define the following two aliases in your ~/.bashrc file to do quick tests of your code in a normal node or a GPU node
+
+```
+alias stest="srun -p test -t 0-00:15:00 --exclusive --pty bash"
+alias stestgpu="srun -p gputest -t 0-00:15:00 --exclusive --pty bash"
+```
