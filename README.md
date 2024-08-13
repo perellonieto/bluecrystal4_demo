@@ -17,7 +17,7 @@ This is a set of demos to illustrate different uses of Blue Crystal phase 4.
 You can find the following links of interest and they are a pre-requisite for
 the demos. However, a small summary is added here.
 
-- [BlueCrystal Phase 4 User Documentation](https://www.acrc.bris.ac.uk/protected/bc4-docs/index.html)
+- [BlueCrystal Phase 4 User Documentation]([https://www.acrc.bris.ac.uk/protected/bc4-docs/index.html](https://www.acrc.bris.ac.uk/protected/hpc-docs/connecting/index.html?_gl=1*4uonvc*_ga*MTU3NjI0NTQ0Ny4xNjc4NDU3NjYy*_ga_6R8SPL3HLT*MTcyMzU0NTc2NS40MDUuMS4xNzIzNTQ1NzY4LjU3LjAuMA..))
 - [Additional Guides for BlueCrystal users](https://www.acrc.bris.ac.uk/acrc/resources.htm)
 - [Advanced Computing Research Centre workshops](https://www.acrc.bris.ac.uk/acrc/training.htm)
 - [Parallel Programming with Python by Chrys Woods](http://chryswoods.com/parallel_python/index.html)
